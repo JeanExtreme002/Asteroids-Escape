@@ -76,8 +76,8 @@ class Asteroids(object):
             x = asteroid.x
             y = asteroid.y
 
-            # Após desenhar, o objeto rect.Rect contido na lista de asteróides, será atualizado
-            # por um novo objeto, afim de evitar conflitos futuros.
+            # Após desenhar, o objeto rect.Rect contido na lista de asteróides será atualizado
+            # por um novo objeto, a fim de evitar conflitos futuros.
             self.__asteroids[index] = self.__window.blit(self.__image, [x, y] )
             self.__asteroids[index].x = x
 
@@ -110,11 +110,4 @@ class Asteroids(object):
 
     @property
     def width(self):
-        return self.__WIDTH
-            
-            
-
-
-            
-
-    
+        return self.__WIDTH            

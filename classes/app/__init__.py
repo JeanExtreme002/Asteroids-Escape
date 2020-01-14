@@ -43,22 +43,19 @@ class App(System):
 
         for event in pygame.event.get():
             
-            # Inicia o jogo.
             if event.type == pygame.BUTTON_X1:
                 if self.__startButton.pressed:
                     self.__playing = True
 
-            # Fecha o programa.
             elif event.type == pygame.QUIT:
                 self.__stop = True
 
             elif event.type == pygame.KEYDOWN:
                 
-                # Fecha o programa.
                 if event.key == pygame.K_ESCAPE:
                     self.__stop = True
 
-                # Pausa ou retoma o jogo.
+                # Pausa ou despausar jogo.
                 elif event.key == pygame.K_p and self.__playing:
                     self.__pause = not self.__pause
                     if self.__pause:
@@ -101,18 +98,17 @@ class App(System):
         # Apaga todos os asteróides, centraliza a nave na tela e reinicia o cronômetro.
         self.asteroids.clear()
         self.spaceship.draw(self.WINDOW_GEOMETRY[0] // 2, self.WINDOW_GEOMETRY[1] // 2)
-        self.timer.start()
+        self.stopwatch.start()
 
 
     def run(self):
         """
         Método para inicializar o jogo.
         """
-
-        # Deseja o menu principal do jogo.
+        
+        # Cria o menu inicial e aguarda o usuário apertar o botão "start" ou fechar o programa.
         mainMenu = MainMenu(self.__window, self.spaceship, self.__titleText, self.__startButton)
         
-        # Cria o menu incial e aguarda o usuário apertar o botão "start" ou fechar o programa.
         while not self.__playing and not self.__stop:
             self.__captureEvents()
 
@@ -155,7 +151,7 @@ class App(System):
         self.spaceship.centralize()
 
         while not self.__stop:
-            self.__time = self.timer.get()
+            self.__time = self.stopwatch.get()
 
             # Verifica se a nave colidiu.
             if self.__collided(): break

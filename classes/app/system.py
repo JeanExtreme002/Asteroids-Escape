@@ -1,5 +1,5 @@
 from classes.util.sounds import Sounds
-from classes.util.timer import Timer
+from classes.util.stopwatch import Stopwatch
 import os
 import pygame
 
@@ -54,7 +54,7 @@ class System(object):
 
         self.clock = pygame.time.Clock() 
         self.sounds = Sounds()  
-        self.timer = Timer()
+        self.stopwatch = Stopwatch()
 
 
     def updateWindow(self):

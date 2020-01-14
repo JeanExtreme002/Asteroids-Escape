@@ -1,7 +1,7 @@
 import time
 
 
-class Timer(object):
+class Stopwatch(object):
 
     def start(self):
 
