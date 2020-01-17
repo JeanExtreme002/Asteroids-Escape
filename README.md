@@ -5,9 +5,9 @@ many obstacles ahead. To avoid exploding your spaceship, dodge and stay as far a
 
 This game was created with [Pygame](https://www.pygame.org) using version 1.9.4
 
-|||
-| ------------- | ------------- |
-|![](photos/image1.png) | ![](photos/image2.png)|
+|                                |                                |
+| ------------------------------ | ------------------------------ |
+|![preview](photos/image1.png)   | ![preview2](photos/image2.png) |
 
 # Running:
 ```
